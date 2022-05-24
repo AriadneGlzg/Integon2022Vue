@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hola mundo Vue.js ♥</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script >
+            document.addEventListener('DOMContentLoaded', function(){
+                new Vue({
+                    el: '.reactive-text', //aqui si necesita ser el, un elemento con la clase "reactive-text"
+                    data:{                //aqui si necesita ser data //solo sera aplicado a un elemento 
+                        text: "Hola mundo, Vue.js",
+                        message : "another message"
+                    }
+                });
+                new Vue({
+                    el: '.mi-clase', 
+                    data:{ //las propiedades dentro de data si pueden tener el nombre que sea
+                        texto: "Hola mundo, Clase", 
+                        mensajillo : "another messages ♥"
+                    }
+                });                
+            });
+        </script>
+    </head>
+    <body>
+        <div> <!--para que funcione en mas de un elemnto deberia poner la clase en el div-->
+            <h1 class="reactive-text">
+               {{text}}
+            </h1>
+
+            <h1 class="reactive-text"> <!--aqui ya no va a funcionar solo funciona en un elemnto-->
+               {{message}}
+            </h1>
+
+            <h1 class="mi-clase"> <!--aqui ya no va a funcionar solo funciona en un elemnto-->
+                {{mensajillo}}
+             </h1>            
+        </div>
+    </body>
+</html>
