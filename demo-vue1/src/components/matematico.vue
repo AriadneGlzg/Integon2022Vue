@@ -67,8 +67,8 @@ export default {
       }
     }
   },
-  watch: { //
-    $props:{
+  watch: { // watch esta al pendiente de los cambios, tu le dices que es lo que quieresque este monitoraando/observando
+    $props:{ // aqui con ese $props indica que debe estar al pendiente de todas las propiedades del componente, estas son las props de la linea 37
       handler(){
         console.log("Realizando operacion...");
         this.calculaOperacion();
