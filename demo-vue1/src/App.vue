@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <CounterText/>
+    <filtersDemo/>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <Card>
@@ -56,6 +58,8 @@ import GreetingExample from './components/greetings-example.vue'
 import Repeat from './components/Repeat-component.vue'
 import SlottedComponent from './components/Slotted-Component.vue'
 import Card from './components/card-example.vue'
+import filtersDemo from './components/filters-demo.vue'
+import CounterText from './components/TextEditorWithCount.vue'
 
 
 const possibleGreetings = [
@@ -89,7 +93,9 @@ export default {
     GreetingExample,
     Repeat,
     SlottedComponent,
-    Card
+    Card,
+    filtersDemo,
+    CounterText
 
 },
   computed: {
