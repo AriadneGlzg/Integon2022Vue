@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <!--para que se comuniquen por asi decirlo Feed y editor necesitan un canal ese canal es por asi decirlo el padre osea App.Vue, aqui se controla la comunicacion
+    entonces para que se comuniquen los dos componentes ambos deben de tener el mimso padre -->
+    <MessageFeed :messages="messages" /> <!--el feed tiene como prop el arreglo messages-->
+    <MessageEditor @send="onSend($event)" />
+    <Eventos @NotificacionTrigger="respuestaEvento"/> <!--en el @nombreevento le decimos que reaccione a ese evento y despues con el ="metodo" cuando ese evento ocurra mandamos ejecutar al metodo, en el metodo se puede cachar o no
+    lo que este mandando el evento pero si se quiere cachar necesitamos guardar eso en una variable usando la sintaxis $cosa esa cosa es solo un nombre que yo pongo -->
     <CounterText/>
     <filtersDemo :dato='lorem | ellipsis'/> <!--// podemos aplicar el filter a alguna prop de entrada para prefiltrarla-->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -61,6 +67,9 @@ import Card from './components/card-example.vue'
 import filtersDemo from './components/filters-demo.vue'
 import CounterText from './components/TextEditorWithCount.vue'
 import { ellipsis } from '../src/utils/filters' // las funciones se importan con { } esos parentesis el * es para importar todo lo que haya en el archivo
+import Eventos from './components/demo-eventos.vue'
+import MessageEditor from './components/MessageEditor.vue'
+import MessageFeed from './components/MessageFeed.vue'
 
 
 const possibleGreetings = [
@@ -75,6 +84,7 @@ export default {
   },
   data(){
     return{
+      messages: [], 
       currentIndex: 0,
       input1:"hello i1",
       input2:"aloha i2",
@@ -100,7 +110,10 @@ export default {
     SlottedComponent,
     Card,
     filtersDemo,
-    CounterText
+    CounterText,
+    Eventos,
+    MessageEditor,
+    MessageFeed,
 
 },
   computed: {
@@ -114,11 +127,19 @@ export default {
       return this.currentGreeting.who
     }
   },
-    methods: {
+  methods: {
+    onSend(event) { // evento para el ejemplo de message cada que se puche el send se van a star guarda los mensajes del texarea
+      this.messages = [...this.messages, event] //en este arreglo this.messages, esa es una notacion para que en this.messagges se guarde lo que habia el messges y aparte el evento
+    },    // recuerda que ese ...this.mesagges es el operador spread
     newGreeting() {
       this.currentIndex = this.currentIndex === possibleGreetings.length - 1
         ? 0
         : this.currentIndex + 1
+    },
+    //ese $cosa, son datos o cosas que manda el evento a quien lo este escuchando, puede o no mandar cosas
+    respuestaEvento($event){ //aqui la sintaxis es $nombre se le pone event por buena practica, pero solo se necesita ponerle un nombre de variable para cachar lo que venga del evento
+      alert(`Click ♥ ${ $event}`);
+      console.log($event);
     }
   }
 }

@@ -21,6 +21,9 @@
                       </li>
                       <li class="nav-devider"></li>
                       <li class="nav-small-cap">PERSONAL</li>
+                      <li class="nav-small-cap"><router-link to="/dashboard">Dashboard</router-link></li>
+                      <li class="nav-small-cap"><router-link to="/progress">Progress</router-link></li>
+                      <li class="nav-small-cap"><router-link to="/grafica1">Grafica 1</router-link></li>    
                       <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
                           <ul aria-expanded="false" class="collapse">
                               <li><a href="index.html">Minimal </a></li>

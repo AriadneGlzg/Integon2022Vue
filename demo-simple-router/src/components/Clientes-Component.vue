@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>page not found works ♥</p>
+        <p>Clientes works ♥</p>
     </div>
 </template>
 

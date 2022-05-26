@@ -1,5 +1,5 @@
 {
-  "name": "admin-pro",
+  "name": "demo-simple-router",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue-router":"^3.1.3",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-router":"^3.1.3"
+
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

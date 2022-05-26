@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>page not found works ♥</p>
+        <p>Grafica1 works ♥</p>
     </div>
 </template>
 

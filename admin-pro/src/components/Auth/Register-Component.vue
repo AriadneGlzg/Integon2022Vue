@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div><!--♥-->
         <section id="wrapper" class="login-register login-sidebar" style="background-image:url(/assets/images/background/login-register.jpg);">
             <div class="login-box card">
                 <div class="card-body">

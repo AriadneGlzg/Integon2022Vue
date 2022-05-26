@@ -10,7 +10,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-body">
-                     Texto dentro del card ♥
+                     <router-view/>
                   </div>
                 </div>
               </div>
