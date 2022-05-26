@@ -27,7 +27,7 @@
                 // getter
                 get() {
                     console.log(`se puso el valor${this.count +1}`);
-                    return "♥"
+                    return this.count + 1
                 },
                 // setter
                 set(val) {
