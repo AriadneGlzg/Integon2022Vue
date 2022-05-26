@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <CounterText/>
-    <filtersDemo/>
+    <filtersDemo :dato='lorem | ellipsis'/> <!--// podemos aplicar el filter a alguna prop de entrada para prefiltrarla-->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <Card>
@@ -60,6 +60,7 @@ import SlottedComponent from './components/Slotted-Component.vue'
 import Card from './components/card-example.vue'
 import filtersDemo from './components/filters-demo.vue'
 import CounterText from './components/TextEditorWithCount.vue'
+import { ellipsis } from '../src/utils/filters' // las funciones se importan con { } esos parentesis el * es para importar todo lo que haya en el archivo
 
 
 const possibleGreetings = [
@@ -69,12 +70,16 @@ const possibleGreetings = [
 ]
 export default {
   name: 'App',
+  filters:{
+    ellipsis //aqui le decimos que va a ser un filtro
+  },
   data(){
     return{
       currentIndex: 0,
       input1:"hello i1",
       input2:"aloha i2",
       input3:"annyeonghaseyo i3",
+      lorem : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     }
   } ,
   components: {
