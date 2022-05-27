@@ -1,14 +1,8 @@
 <template>
-
-<div id="app">
-  <router-view/>
-</div>
-
-<!--
   <div id="app">
     <div id="main-wrapper">
-      <HeaderComponent></HeaderComponent>
       <SidebarComponent></SidebarComponent>
+      <HeaderComponent></HeaderComponent>
       <div class="page-wrapper">
         <div class="container-fluid">
             <BreadcrumbsComponent></BreadcrumbsComponent>
@@ -27,31 +21,22 @@
           </footer>
       </div>
     </div>    
-    <*!--
-      <LoginComponent/>
-      <RegisterComponent/>
-
-    --*>
-
   </div>
-  -->
+  
 </template>
 
 <script>
-// import SidebarComponent from './components/Shared/Sidebar-Component.vue'
-// import HeaderComponent from './components/Shared/Header-Component.vue'
-// import BreadcrumbsComponent from './components/Shared/Breadcrumbs-Component.vue'
-// import LoginComponent from './components/Auth/Login-Component.vue'
-// import RegisterComponent from './components/Auth/Register-Component.vue'
+
+import HeaderComponent from './components/Shared/Header-Component.vue'
+import BreadcrumbsComponent from './components/Shared/Breadcrumbs-Component.vue'
+import SidebarComponent from './components/Shared/Sidebar-Component.vue'
 
 export default {
   name: 'App',
   components: {
-    // LoginComponent,
-    // RegisterComponent,
-    // SidebarComponent,
-    // HeaderComponent,
-    // BreadcrumbsComponent
+    SidebarComponent,
+    HeaderComponent,
+    BreadcrumbsComponent
   }
 }
 </script>

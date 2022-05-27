@@ -6,7 +6,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import ClientesComponent from '../src/components/Clientes-Component.vue'
+//import ClientesComponent from '../src/components/Clientes-Component.vue'
 import FacturasComponent from '../src/components/Facturas-Component.vue'
 Vue.use(VueRouter); // SE LEVANTA LA DEPENDENCIA PARA VUE ROUTER
 
@@ -14,7 +14,8 @@ export const routes=[ // todas las rutas que tendra la app
     {
         path:'/clientes',
         name: 'clientes', // este es un identificador, es mas como para nosotros como programadores
-        component: ClientesComponent
+        component: () => import( // esta es otra sintaxis para hacer el import del componente pero con LazyLoad ya no necesitariamos hacer el import de arriba
+            '../src/components/Clientes-Component.vue')
     },
     {
         path:'/facturas',
@@ -24,7 +25,7 @@ export const routes=[ // todas las rutas que tendra la app
 ];
 
 const router = new VueRouter({ 
-    mode: 'history',
+    mode: 'history', //param
     base: process.env.BASE_URL,
     routes
 });
